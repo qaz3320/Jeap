@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="index_banner width100">
+  <div id="full-screen-slider">
+        <ul id="slides">
+            <li style="background:url('/static/images/teachers_banner.jpg') no-repeat center top"><a href="#" target="_blank"></a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="clear"></div>
+
+<div class="course margint40 width100">
+    <div class="title width100"><div class="width965 marginauto"></div></div>
+    <ul class="width965 margint40 marginauto">
+        <dl class="marginl225" style="position:relative; top:10px; margin-top:-10px;"><img src="/static/images/course_ultop.jpg" /></dl>
+        <li>
+          <div class="marginl225"><img src="/static/images/course_litop.jpg" /></div>
+            <div class="course_con">
+                <span class="course_biref fright" style="word-break:break-all">{{me.content|safe}}</span>
+              <div class="course_left fleft">
+                  <p class="course_name" style="float:right;"><a href="#">{{me.title}}</a></p>
+                    <p class="date"></p>
+                </div>
+                  
+           </div>
+          <div class="marginl225"><img src="/static/images/course_libot.jpg" /></div>
+        </li>
+       <dl class="marginl225"><img src="/static/images/course_ulbot.jpg" /></dl>
+    </ul>
+</div>
+{% endblock %}

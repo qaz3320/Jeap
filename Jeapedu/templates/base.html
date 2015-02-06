@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{{tag1|default:"智普教育-首页"}}</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<link type="text/css" rel="stylesheet" href="/static/css/style.css" />
+<link rel="stylesheet" type="text/css" href="/static/css/jquery.jslides.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="/static/css/styler.css">
+<script type="text/javascript" src="/static/js/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="/static/js/jquery.jslides.js"></script>
+<script type="text/javascript" src="/static/js/script.js"></script>
+<script  src="/static/js/jquery.min.js"></script>
+<script  src="/static/js/jquery.scrollbox.js"></script>
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+$( document ).ready(function() {
+    $('#demo').scrollbox({
+        switchItems: 3,
+        distance: 142
+    });
+});
+</script>
+<script type="text/javascript">
+        initfocus_index();//首页图片轮播
+        var le_Main, le_Scroll, le_Clone, timer;
+        function lecturerRoll(){
+            le_Main=getid("divScrollMain");
+            le_Scroll=getid("c_ul");
+            le_Clone=getid("clone_child");
+            change=getid("divScrollMain_child");
+            change.style.width=(le_Scroll.offsetWidth*2+50)+"px";
+            le_Clone.innerHTML=le_Scroll.innerHTML;
+            timer=setInterval(_foo('divScrollMain','c_ul'),20)
+        }
+        var classMain, classScroll, classClone, time;
+        function _foo(main, scroll) {
+            return function(){
+                mar(main, scroll);
+            }
+        }
+        function mar(main, scroll){
+            main = getid(main);
+            scroll = getid(scroll);
+            if((scroll.offsetWidth - 600 )<=main.scrollLeft){
+                main.scrollLeft-=scroll.offsetWidth;
+            } 
+            else {
+                main.scrollLeft++;
+            }
+        }
+        function getid(id){
+            return document.getElementById(id);
+        }
+        //就业信息向上滚动效果
+        var main, child, hide, speed = 200;
+function getid(id){
+    return document.getElementById(id);
+}
+function Marquee(){
+    main = getid('tojobbj');
+    child = getid('tojobbj_child');
+    hide = getid('tojobbj_child_clone');
+/*  hide.innerHTML=child.innerHTML;
+    if(hide.offsetHeight-main.scrollTop<=0){
+        main.scrollTop-=child.offsetHeight;
+    } 
+    else {
+        main.scrollTop++;
+    }*/
+    main.onmouseover=function() {
+    clearInterval(MyMar)
+    };
+    main.onmouseout=function() {
+    MyMar=setInterval(Marquee,speed)
+    };
+}
+        window.onload=function(){
+            lecturerRoll();
+            /*classRoll();*/
+            //setInterval(Marquee,speed);
+        };
+
+
+
+    </script>
+
+
+
+
+
+
+
+<style>
+<!--    
+/* jQuery jcImgScroll css */
+.jcImgScroll { position:relative; height:495px; margin-top:30px;}
+.jcImgScroll li { border:1px solid #ccc; }
+.jcImgScroll li a { background:#fff; display:block; height:493px;  }
+.jcImgScroll li.loading a { background:#fff url(/static/images/loading.gif) no-repeat center center;} 
+.jcImgScroll li img,.jcImgScroll li,.jcImgScroll em,.jcImgScroll dl { display:none; border:0 none;}
+.jcImgScroll em.sPrev { background:url(/static/images/arrow-left.png) no-repeat left center; }
+.jcImgScroll em.sNext { background:url(/static/images/arrow-right.png) no-repeat right center;}
+.jcImgScroll dl dd { background:url(/static/images/NumBtn.png) no-repeat 0 bottom; text-indent:-9em; }
+.jcImgScroll dl dd:hover,.jcImgScroll dl dd.curr { background-position:0 0; }
+-->
+</style>
+
+
+<script src="static/js/jQuery-easing.js" language="javascript" type="text/javascript"></script>
+<script src="static/js/jQuery-jcImgScroll.js" language="javascript" type="text/javascript"></script>
+<script language="javascript" type="text/javascript">
+<!-- 
+$(function(){
+    $("#demo1").jcImgScroll({
+        
+    });
+    $("#demo2").jcImgScroll({
+    });
+    $("#demo3").jcImgScroll({
+        arrow : {
+            width:110,  
+            height:495,
+            x:220,
+            y:0
+        },
+        offsetX : 140,
+        NumBtn : true,
+        title:false
+    });
+});
+-->
+</script>
+</head>
+
+<body>
+<div class="top width100">
+	<div class="width965 marginauto">
+        <div class="nav fright  fbule1">
+        	<ul>
+            {%for i in head%}
+				<li><a href="{{i.link}}">{{i.title}}</a></li>
+                {%endfor%}
+            </ul>
+        </div>
+        <div class="logo"><a href="/"><img src="{{tagimg32|default:'/static/images/logo.jpg'}}" /></a></div>
+    </div>
+</div>
+
+<div class="clear"></div>
+
+
+{% block content %}{% endblock %}
+
+
+<div class="clear"></div>
+
+
+<div class="bot width100">
+    <span>{{tag29|default:"版权所有"}}&nbsp;&nbsp;&nbsp;&nbsp;{{tag30|default:"智普教育"}}<br><p>联系电话：010-5687 5664&nbsp;&nbsp;&nbsp;24H服务电话：153 1153 1358&nbsp;&nbsp;&nbsp;咨询QQ：194 184 7311</p>
+{{tag31|default:"地址：软件园校区地址：北京市海淀区上地软件园汉王大厦A2区203&nbsp;&nbsp;&nbsp;霍营站霍营校区地址：北京市昌平区科星西路首开国风美唐5号楼805~806"}}</span>
+
+</div>
+
+</body>
+</html>

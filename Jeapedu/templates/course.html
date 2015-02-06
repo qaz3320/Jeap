@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="clear"></div>
+<div class="index_banner width100">
+	<div id="full-screen-slider">
+        <ul id="slides">
+            <li style="background:url('/static/images/course_banner.jpg') no-repeat center top"><a href="#" target="_blank"></a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="clear"></div>
+
+<div class="course margint40 width100">
+    <div class="title width100"><div class="width965 marginauto"><img src="/static/images/course_title.jpg"></div></div>
+    <ul class="width965 margint40 marginauto">
+      	<dl class="marginl225" style="position:relative; top:10px; margin-top:-10px;"><img src="/static/images/course_ultop.jpg" /></dl>
+	   {%for x in p1.object_list%}
+       	<li>
+        	<div class="marginl225"><img src="/static/images/course_litop.jpg" /></div>
+            <div class="course_con">
+                <span class="course_biref fright" style="word-break:break-all">{{x.content|safe}}</span>
+           		<div class="course_left fleft">
+                	<p class="course_name" style="float:right;"><a href="#">{{x.title}}</a></p>
+                    <p class="date">{{x.startdate}}</p>
+                </div>
+                  
+           </div>
+          <div class="marginl225"><img src="/static/images/course_libot.jpg" /></div>
+        </li>
+		{%endfor%}
+       <dl class="marginl225"><img src="/static/images/course_ulbot.jpg" /></dl>
+    </ul>
+</div>
+<div class="clear"></div>
+<div class="page" style="padding-left:250px;">
+	<p>共{{count}}条记录，
+        <a href="#">首页</a>&nbsp;&nbsp;
+        {% if has_previous %}
+        <a href="/course/page={{ p1.previous_page_number }}/">上一页</a>&nbsp;&nbsp;
+        <a href="/course/page={{ p1.previous_page_number }}/">{{ p1.previous_page_number }}</a>&nbsp;&nbsp;
+        {% endif %}
+        <a href="/course/page={{ p1.number }}/" class="current">{{p1.number}}</a>&nbsp;&nbsp;
+        {% if has_next %}
+        <a href="/course/page={{ p1.next_page_number }}">{{ p1.next_page_number }}</a>&nbsp;&nbsp;<a href="/course/page={{ p1.next_page_number }}">下一页</a>&nbsp;&nbsp;
+        {% endif %}
+        第&nbsp;<select><option>1</option></select>
+    页&nbsp;&nbsp;<a href="#">尾页</a></p>
+</div>
+{% endblock %}

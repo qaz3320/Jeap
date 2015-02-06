@@ -1,0 +1,262 @@
+{% extends "base.html" %}
+{% block content%}
+<div class="index_banner">
+	<div id="full-screen-slider">
+	<ul id="slides">
+		<li style="background:url('{{tagimg33|default:'/static/images/banner1.jpg'}}') no-repeat center top"><a href="#" target="_blank">1</a></li>
+		<li style="background:url('{{tagimg34|default:'/static/images/banner2.jpg'}}') no-repeat center top"><a href="#" target="_blank">2</a></li>
+        <li style="background:url('{{tagimg35|default:'/static/images/banner3.jpg'}}') no-repeat center top"><a href="#" target="_blank">3</a></li>
+		<li style="background:url('{{tagimg36|default:'/static/images/banner4.jpg'}}') no-repeat center top"><a href="#" target="_blank">4</a></li>
+	</ul>
+	</div>
+</div>
+<div class="clear"></div>
+<div class="con1 width965 marginauto margint40">
+    <div class="con1_right fright " ><img src="{{tagimg37|default:'/static/images/con1_tv.jpg'}}" /></div>
+    <div class="con1_left  fbule">
+         <div><img src="{{tagimg38|default:'/static/images/con1_top.jpg'}}" /></div>
+         <ul>
+			 {%for x in course%}
+             <li><a href="/courseshow/{{x.id}}">{{x.title}}</a></li>
+			 {%endfor%}
+        </ul>
+	</div>
+</div>
+
+
+<div class="clear"></div>
+    <div class="con2_top"><img src="{{tagimg39|default:'/static/images/con2_top.jpg'}}" />
+    </div>
+    <div id="honor" class="cl col">
+  <div id="divScrollMain" onmouseover="clearInterval(timer)" onmouseout="timer=setInterval(_foo('divScrollMain','c_ul'),20)">
+    <div id="divScrollMain_child">
+      <ul id="c_ul">
+      {%for i in teachers%}
+                        <li>
+          <div class="fr">
+            <p><a class="fr" href="http://www.jeapedu.com/index.php?m=content&c=index&a=lists&catid=7" title="了解 讲师团队">「师资力量」</a><b>{{i.name}}</b></p>
+            <a href="http://www.jeapedu.com/index.php?m=content&c=index&a=show&catid=7&id=142">讲师：{{i.name}}</a> </div>
+          <p class="fr cl">{{i.introduction}}</p>
+      <a href="http://www.jeapedu.com/index.php?m=content&c=index&a=show&catid=7&id=142"><img src="/media/{{i.photo}}" alt="讲师：刘硕" width="132" height="92" style="border: 1px solid #CCCCCC; padding-top: 2px;    padding-right: 2px;      padding-bottom: 2px;    padding-left: 2px;"></a> </li>
+      {%endfor%}
+                
+                      </ul>
+      <ul id="clone_child" style="float:left;overflow:hidden;">
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<div class="clear"></div>
+
+<div class="con4 margint40 width100">
+    <div class="con4_top width100"><img src="{{tagimg41|default:'/static/images/con4_top.jpg'}}" alt=""></div>
+    <ul class="marginauto">
+        <!--start 5-->
+        {%for i in con%}
+        <li>
+            <a href="{{i.link}}">
+                <p>{{i.title}}</p>
+                <span>{{i.sub|safe}}</span>
+            </a>
+            {%endfor%}
+        </li>
+
+        
+    </ul>
+</div>
+
+<div class="clear"></div>
+<div class="con3_top"><img src="{{tagimg40|default:'/static/images/con3_top.jpg'}}" alt="" /></div>
+<div id="demo" class="scroll-img">
+      <ul>
+      {%for i in students%}
+        <li><a href="http://sc.chinaz.com/?"><img src="/media/{{i.photo}}"></a></li>
+        {%endfor%}
+      </ul>
+    
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="clear"></div>
+
+
+
+    <div class="con5_top"><img src="{{tagimg42|default:'/static/images/con5_top.jpg'}}" alt=""></div>
+    <!-- 代码 开始 -->
+    <div id="demo1" class="jcImgScroll">
+        <ul>
+        {%for i in wo%} 
+            <li>
+            <a href="{{i.link}}" target="_blank" path="/media/{{i.img}}" title="{{i.name}}"></a></li>
+        {%endfor%}
+        </ul>
+    </div>
+    <!-- 代码 结束 -->
+</div>
+
+
+
+<div class="clear"></div>
+
+<div id="news" class="con7 marginauto margint40">
+
+    <div class="con5_top"><img src="{{tagimg45|default:'/static/images/con7_top.jpg'}}" alt=""></div>
+    <div class="con7_news marginauto">
+        <ul>
+            {%for x in news%}
+            <li><a href="#">{{ x.title }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+
+
+<div class="clear"></div>
+
+<div id="enterprise" class="con6 width100">
+	<div class="con6_top width965 marginauto"><div class="fright"><img src="{{tagimg43|default:'/static/images/con6_top.jpg'}}" /></div><span>{{tag28|default:"智普教育"}}</span></div>
+    <ul class=" marginauto">
+    	<li><p>世界500强企业</p>
+            <ul class="logolist">
+            	<!--start 9-->
+                <li><div class="conlogo"><a href="#"><img src="static/images/con6_conname1.jpg"></a></div></li>
+                <li><div class="conlogo"><a href="#"><img src="static/images/con6_conname2.jpg"></a></div></li>
+                <li><div class="conlogo"><a href="#"><img src="static/images/con6_conname3.jpg"></a></div></li>
+                <li><div class="conlogo"><a href="#"><img src="static/images/con6_conname4.jpg"></a></div></li>
+                <li><div class="conlogo"><a href="#"><img src="static/images/con6_conname5.jpg"></a></div></li>
+                <li><div class="conlogo"><a href="#"><img src="static/images/con6_conname6.jpg"></a></div></li>
+                <li><div class="conlogo"><a href="#"><img src="static/images/con6_conname7.jpg"></a></div></li>
+                <li><div class="conlogo"><a href="#"><img src="static/images/con6_conname8.jpg"></a></div></li>
+                <li><div class="conlogo"><a href="#"><img src="static/images/con6_conname9.jpg"></a></div></li>
+                <!--end 9-->
+            </ul>
+        </li>
+        <li><p>门户网站公司</p>
+            <ul class="logolist">
+            	<!--start 9-->
+                <li><div class="conlogo"><a href="#"><img src="static/images/con6_conname1.jpg"></a></div></li>
+                <li><div class="conlogo"><a href="#"><img src="static/images/con6_conname2.jpg"></a></div></li>
+                <li><div class="conlogo"><a href="#"><img src="static/images/con6_conname3.jpg"></a></div></li>
+                <li><div class="conlogo"><a href="#"><img src="static/images/con6_conname4.jpg"></a></div></li>
+                <li><div class="conlogo"><a href="#"><img src="static/images/con6_conname5.jpg"></a></div></li>
+                <li><div class="conlogo"><a href="#"><img src="static/images/con6_conname6.jpg"></a></div></li>
+                <li><div class="conlogo"><a href="#"><img src="static/images/con6_conname7.jpg"></a></div></li>
+                <li><div class="conlogo"><a href="#"><img src="static/images/con6_conname8.jpg"></a></div></li>
+                <li><div class="conlogo"><a href="#"><img src="static/images/con6_conname9.jpg"></a></div></li>
+                <!--end 9-->
+            </ul>
+        </li>
+        <li><p>上市名企业</p>
+            <ul class="logolist">
+            	<!--start 9-->
+                <li><div class="conlogo"><a href="#"><img src="static/images/con6_conname1.jpg"></a></div></li>
+                <li><div class="conlogo"><a href="#"><img src="static/images/con6_conname2.jpg"></a></div></li>
+                <li><div class="conlogo"><a href="#"><img src="static/images/con6_conname3.jpg"></a></div></li>
+                <li><div class="conlogo"><a href="#"><img src="static/images/con6_conname4.jpg"></a></div></li>
+                <li><div class="conlogo"><a href="#"><img src="static/images/con6_conname5.jpg"></a></div></li>
+                <li><div class="conlogo"><a href="#"><img src="static/images/con6_conname6.jpg"></a></div></li>
+                <li><div class="conlogo"><a href="#"><img src="static/images/con6_conname7.jpg"></a></div></li>
+                <li><div class="conlogo"><a href="#"><img src="static/images/con6_conname8.jpg"></a></div></li>
+                <li><div class="conlogo"><a href="#"><img src="static/images/con6_conname9.jpg"></a></div></li>
+                <!--end 9-->
+            </ul>
+        </li>
+        <li><p>软件先锋企业</p>
+            <ul class="logolist">
+            	<!--start 9-->
+                <li><div class="conlogo"><a href="#"><img src="static/images/con6_conname1.jpg"></a></div></li>
+                <li><div class="conlogo"><a href="#"><img src="static/images/con6_conname2.jpg"></a></div></li>
+                <li><div class="conlogo"><a href="#"><img src="static/images/con6_conname3.jpg"></a></div></li>
+                <li><div class="conlogo"><a href="#"><img src="static/images/con6_conname4.jpg"></a></div></li>
+                <li><div class="conlogo"><a href="#"><img src="static/images/con6_conname5.jpg"></a></div></li>
+                <li><div class="conlogo"><a href="#"><img src="static/images/con6_conname6.jpg"></a></div></li>
+                <li><div class="conlogo"><a href="#"><img src="static/images/con6_conname7.jpg"></a></div></li>
+                <li><div class="conlogo"><a href="#"><img src="static/images/con6_conname8.jpg"></a></div></li>
+                <li><div class="conlogo"><a href="#"><img src="static/images/con6_conname9.jpg"></a></div></li>
+                <!--end 9-->
+            </ul>
+        </li>
+        <li><p>电子商务公司</p>
+            <ul class="logolist">
+            	<!--start 9-->
+                <li><div class="conlogo"><a href="#"><img src="static/images/con6_conname1.jpg"></a></div></li>
+                <li><div class="conlogo"><a href="#"><img src="static/images/con6_conname2.jpg"></a></div></li>
+                <li><div class="conlogo"><a href="#"><img src="static/images/con6_conname3.jpg"></a></div></li>
+                <li><div class="conlogo"><a href="#"><img src="static/images/con6_conname4.jpg"></a></div></li>
+                <li><div class="conlogo"><a href="#"><img src="static/images/con6_conname5.jpg"></a></div></li>
+                <li><div class="conlogo"><a href="#"><img src="static/images/con6_conname6.jpg"></a></div></li>
+                <li><div class="conlogo"><a href="#"><img src="static/images/con6_conname7.jpg"></a></div></li>
+                <li><div class="conlogo"><a href="#"><img src="static/images/con6_conname8.jpg"></a></div></li>
+                <li><div class="conlogo"><a href="#"><img src="static/images/con6_conname9.jpg"></a></div></li>
+                <!--end 9-->
+            </ul>
+        </li>
+        <li><p>SNS网络社交平台公司</p>
+            <ul class="logolist">
+            	<!--start 9-->
+                <li><div class="conlogo"><a href="#"><img src="static/images/con6_conname1.jpg"></a></div></li>
+                <li><div class="conlogo"><a href="#"><img src="static/images/con6_conname2.jpg"></a></div></li>
+                <li><div class="conlogo"><a href="#"><img src="static/images/con6_conname3.jpg"></a></div></li>
+                <li><div class="conlogo"><a href="#"><img src="static/images/con6_conname4.jpg"></a></div></li>
+                <li><div class="conlogo"><a href="#"><img src="static/images/con6_conname5.jpg"></a></div></li>
+                <li><div class="conlogo"><a href="#"><img src="static/images/con6_conname6.jpg"></a></div></li>
+                <li><div class="conlogo"><a href="#"><img src="static/images/con6_conname7.jpg"></a></div></li>
+                <li><div class="conlogo"><a href="#"><img src="static/images/con6_conname8.jpg"></a></div></li>
+                <li><div class="conlogo"><a href="#"><img src="static/images/con6_conname9.jpg"></a></div></li>
+                <!--end 9-->
+            </ul>
+        </li>
+        <li><p >更多公司</p>
+            <ul class="logolist2">
+            	<!--start 21-->
+                <li><div class="conlogo"><a href="#"><img src="static/images/con6_conname10.jpg"></a></div></li>
+                <li><div class="conlogo"><a href="#"><img src="static/images/con6_conname12.jpg"></a></div></li>
+                <li><div class="conlogo"><a href="#"><img src="static/images/con6_conname13.jpg"></a></div></li>
+                <li><div class="conlogo"><a href="#"><img src="static/images/con6_conname17.jpg"></a></div></li>
+                <li><div class="conlogo"><a href="#"><img src="static/images/con6_conname15.jpg"></a></div></li>
+                <li><div class="conlogo"><a href="#"><img src="static/images/con6_conname16.jpg"></a></div></li>
+                <li><div class="conlogo"><a href="#"><img src="static/images/con6_conname17.jpg"></a></div></li>
+                <li><div class="conlogo"><a href="#"><img src="static/images/con6_conname12.jpg"></a></div></li>
+                <li><div class="conlogo"><a href="#"><img src="static/images/con6_conname17.jpg"></a></div></li>
+                <li><div class="conlogo"><a href="#"><img src="static/images/con6_conname11.jpg"></a></div></li>
+                <li><div class="conlogo"><a href="#"><img src="static/images/con6_conname12.jpg"></a></div></li>
+                <li><div class="conlogo"><a href="#"><img src="static/images/con6_conname13.jpg"></a></div></li>
+                <li><div class="conlogo"><a href="#"><img src="static/images/con6_conname17.jpg"></a></div></li>
+                <li><div class="conlogo"><a href="#"><img src="static/images/con6_conname15.jpg"></a></div></li>
+                <li><div class="conlogo"><a href="#"><img src="static/images/con6_conname14.jpg"></a></div></li>
+                <li><div class="conlogo"><a href="#"><img src="static/images/con6_conname14.jpg"></a></div></li>
+                <li><div class="conlogo"><a href="#"><img src="static/images/con6_conname14.jpg"></a></div></li>
+                <li><div class="conlogo"><a href="#"><img src="static/images/con6_conname14.jpg"></a></div></li>
+                <li><div class="conlogo"><a href="#"><img src="static/images/con6_conname14.jpg"></a></div></li>
+                <li><div class="conlogo"><a href="#"><img src="static/images/con6_conname14.jpg"></a></div></li>
+                <li><div class="conlogo"><a href="#"><img src="static/images/con6_conname14.jpg"></a></div></li>
+                <!--end 21-->
+            </ul>
+        </li>
+        <li><p>&nbsp;</p><img src="{{tagimg44|default:'/static/images/con6_conlogo8.jpg'}}" /></li>
+    </ul>
+</div>
+
+
+
+
+{%endblock%}
+
+
+
+

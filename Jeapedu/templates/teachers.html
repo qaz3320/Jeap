@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="index_banner width100">
+	<div id="full-screen-slider">
+        <ul id="slides">
+            <li style="background:url('/static/images/teachers_banner.jpg') no-repeat center top"><a href="#" target="_blank"></a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="clear"></div>
+
+<!--div class="teachers margint40 width100">
+    <div class="title width100"><div class="width965 marginauto"><img src="/static/images/teachers_title.jpg"></div></div>
+    <ul class="width965 marginauto ">
+		{%for x in teachers%}
+       <li>
+            <span class="fright"><p><a class="teachers_name" href="#">{{x.name}}</a> &nbsp;&nbsp; 著名python讲师</p>
+            <hr color="#2e2e2e" size="1"/>
+            <p class="teachers_brief fbule" href="#">{{x.introduction}}</p></span>
+             <div class="teachers_img"><a href="#"><img src="{{MEDIA_URL}}{{x.photo}}"></a><span></span></div>
+       </li>
+	   {%endfor%}
+    </ul>
+</div-->
+
+<script>
+.lisub1{background:url(../images/teacher_bg1.jpg) no-repeat; }
+.lisub2{background:url(../images/teacher_bg2.jpg) no-repeat; }
+
+.lisub1 .teacher_brief{padding-left:40px; padding-right:10px;}
+.lisub2 .teacher_brief{padding-left:10px; padding-right:40px;}
+
+.marginauto{margin:0 auto;}
+
+body,ul,li{margin:0; padding:0; font-family:"微软雅黑", "微软简中圆", "宋体";}
+ul{list-style:none;}
+</script>
+<div class="teachers margint40 width100">
+    <div class="title width100"><div class="width965 marginauto"><img src="/static/images/teachers_title.jpg"></div></div>
+	<ul class="marginauto">
+    	<!--start 5 -->
+        <!--分别有lisub1、lisub2两种样式的li-->
+		{%for x in p1.object_list%}
+        <li class="{% cycle 'lisub1' 'lisub2' %}">
+        	<div class="teacher_brief {% cycle 'fright' 'fleft' %}">
+            	<p><b><a>{{x.name}}</a></b>（著名python讲师）</p>
+                <span><a style="word-break:break-all">{{x.introduction}}</a></span>
+            </div>
+            <div class="teachers_img fleft"><img src="{{MEDIA_URL}}{{x.photo}}"><span></span></div>
+        </li>
+		{% endfor %}
+         <!--li class="lisub2">
+            <div class="teachers_img fright"><img src="/static/images/teacher_pic1.jpg"><span></span></div>
+        	<div class="teacher_brief">
+            	<p><b><a href="#">姓名</a></b>（著名python讲师）</p>
+                <span><a href="#">简介内容添加中内容添加中内容添加中内容添加中内容添加中内容添加中内容添加中内容添加中内容添加中内容添加中内容添加中内容添加中内容添加中内容添加中内容添加中内容添加中内容添加中内容添加中内容添加中内容添加中内容添加中内容添加中内容添加中内容添加中内容添加中加中添加中内容添加中内容添加中内容添加中内容添加中内容添加中内容添加中内容添加中内容添加中内容添加中内容添加中内容中内容添加中内容添加中内容添加中内容添加中加中 ...</a></span>
+            </div>
+        </li>-->
+
+
+        
+       
+       <!--end 5-->
+    </ul>
+</div>
+<div class="clear"></div>
+<div class="page">
+	<!--p>共{{teachers_num}}条记录，<a href="#">首页</a>&nbsp;&nbsp; <a href="#">上一页</a>&nbsp;&nbsp;<a class="current">1</a>&nbsp;&nbsp; <a href="#">2</a>&nbsp;&nbsp;<a href="#">下一页</a>&nbsp;&nbsp; 第&nbsp;<select><option>1</option></select>
+    页&nbsp;&nbsp;<a href="#">尾页</a></p-->
+<p>共{{count}}条记录，
+        <a href="#">首页</a>&nbsp;&nbsp;
+        {% if has_previous %}
+        <a href="/teachers/page={{ p1.previous_page_number }}/">上一页</a>&nbsp;&nbsp;
+        <a href="/teachers/page={{ p1.previous_page_number }}/">{{ p1.previous_page_number }}</a>&nbsp;&nbsp;
+        {% endif %}
+        <a href="/teachers/page={{ p1.number }}/" class="current">{{p1.number}}</a>&nbsp;&nbsp;
+        {% if has_next %}
+        <a href="/teachers/page={{ p1.next_page_number }}">{{ p1.next_page_number }}</a>&nbsp;&nbsp;<a href="/teachers/page={{ p1.next_page_number }}">下一页</a>&nbsp;&nbsp;
+        {% endif %}
+        第&nbsp;<select><option>1</option></select>
+    页&nbsp;&nbsp;<a href="#">尾页</a></p>
+
+</div>
+
+{% endblock %}

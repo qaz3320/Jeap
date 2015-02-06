@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="course margint40 width100">
+    <div class="title width100"><div class="width965 marginauto"><img src="/static/images/course_title.jpg"></div></div>
+    <ul class="width965 margint40 marginauto">
+      	<dl class="marginl225" style="position:relative; top:10px; margin-top:-10px;"><img src="/static/images/course_ultop.jpg" /></dl>
+
+       	<li>
+        	<div class="marginl225"><img src="/static/images/course_litop.jpg" /></div>
+            <div class="course_con">
+                <span class="course_biref fright" style="word-break:break-all"><img style="width:650px; margin-left:-28px;" src="{{MEDIA_URL}}{{course.photo}}" />{{course.content|safe}}</span>
+           		<div class="course_left fleft">
+                	<p class="course_name" style="float:right;"><a href="#">{{course.title}}</a></p>
+                    <p class="date">{{course.startdate}}</p>
+                </div>
+                  
+           </div>
+          <div class="marginl225"><img src="/static/images/course_libot.jpg" /></div>
+        </li>
+
+       <dl class="marginl225"><img src="/static/images/course_ulbot.jpg" /></dl>
+    </ul>
+</div>
+{% endblock %}
