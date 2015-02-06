@@ -51,6 +51,7 @@ def upload(request):
 
 
 def paginator(request,id):
+    head     = Head.objects.all()
     courses  = Course.objects.order_by('-id')
     p        = Paginator(courses,5)
     try:
@@ -68,10 +69,11 @@ def paginator(request,id):
 
 
     d        = {'courses':courses,'p':p,'count':p.count,'pages':p.num_pages,'p_list':page_range,
-                'p1':p1,'has_previous':p1.has_previous(),'has_next':p1.has_next()}
+                'p1':p1,'has_previous':p1.has_previous(),'has_next':p1.has_next(),'head':head}
     return render_to_response('course.html',d,context_instance=RequestContext(request))
 
 def paginator_teachers(request,id):
+    head    = Head.objects.all()
     teacherss  = Teachers.objects.order_by('-id')
     p        = Paginator(teacherss,5)
     try:
@@ -89,6 +91,6 @@ def paginator_teachers(request,id):
 
 
     d        = {'teacherss':teacherss,'p':p,'count':p.count,'pages':p.num_pages,'p_list':page_range,
-                'p1':p1,'has_previous':p1.has_previous(),'has_next':p1.has_next()}
+                'p1':p1,'has_previous':p1.has_previous(),'has_next':p1.has_next(),'head':head}
     return render_to_response('teachers.html',d,context_instance=RequestContext(request))
 
